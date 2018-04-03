@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './style.scss';
+
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.state = { name: 'Medium' };
+    this.state = { name: 'World' };
   }
 
   handleChange(e) {
@@ -14,7 +16,7 @@ class Welcome extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="content">
         <h1>Welcome</h1>
         <p>Hello {this.state.name}</p>
         <input onChange={this.handleChange} defaultValue={this.state.name} />
@@ -23,4 +25,4 @@ class Welcome extends React.Component {
   }
 }
 
-ReactDOM.render(<Welcome/>, document.getElementById('app'));
+export default Welcome;
